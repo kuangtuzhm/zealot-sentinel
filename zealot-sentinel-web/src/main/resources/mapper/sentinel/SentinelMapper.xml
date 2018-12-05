@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.jimi.sentinel.web.mapper.SentinelRuleMapper" >
+  <resultMap id="BaseResultMap" type="com.jimi.sentinel.web.entity.SentinelRuleInfo" >
+    <!--  
+    <id column="id" property="id" jdbcType="INTEGER" />
+    -->
+    <result column="serviceId" property="serviceId" jdbcType="VARCHAR" />
+    <result column="appId" property="appId" jdbcType="VARCHAR" />
+    <result column="qps" property="qps" jdbcType="INTEGER" />
+    <result column="total_day" property="totalDay" jdbcType="INTEGER" />
+  </resultMap>
+  <select id="findByGroupId" resultMap="BaseResultMap" >
+    SELECT * from sentinel_rule_config where enable_flag=1 and groupId=#{groupId}
+  </select>
+  
+</mapper>

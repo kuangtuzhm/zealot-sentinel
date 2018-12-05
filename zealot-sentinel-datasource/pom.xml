@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>com.zealot</groupId>
+    <artifactId>zealot-sentinel</artifactId>
+    <version>1.0</version>
+  </parent>
+  <artifactId>zealot-sentinel-datasource</artifactId>
+  <name>zealot-sentinel-datasource</name>
+  <packaging>pom</packaging>
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+  <dependencies>
+    <dependency>
+      <groupId>com.zealot</groupId>
+      <artifactId>zealot-sentinel-extension</artifactId>
+      <version>1.0</version>
+    </dependency>
+  </dependencies>
+  <modules>
+  	<module>zealot-sentinel-datasource-core</module>
+  	<module>zealot-sentinel-datasource-http</module>
+  </modules>
+</project>
