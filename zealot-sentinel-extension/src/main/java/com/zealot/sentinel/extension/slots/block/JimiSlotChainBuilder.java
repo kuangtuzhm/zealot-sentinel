@@ -44,10 +44,11 @@ public class JimiSlotChainBuilder implements SlotChainBuilder {
         chain.addLast(new SystemSlot());
         //通过JimiAuthoritySlot重新定义原来的AuthoritySlot
         chain.addLast(new JimiAuthoritySlot());
-        chain.addLast(new TotalDayFlowSlot());
         chain.addLast(new FlowSlot());
         chain.addLast(new DegradeSlot());
-
+        //日限量放在最后。即都成功了时才进行日限量检测，从而进行数量的扣减
+        chain.addLast(new TotalDayFlowSlot());
+        
         return chain;
     }
 }
