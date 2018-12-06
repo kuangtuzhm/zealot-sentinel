@@ -68,4 +68,14 @@ public class TotalDayFlowRule extends AbstractRule {
 	void setTotalDayFlowChecker(TotalDayFlowChecker totalDayFlowChecker) {
 		this.totalDayFlowChecker = totalDayFlowChecker;
 	}
+	
+	@Override
+    public String toString() {
+        return "FlowRule{" +
+            "resource=" + getResource() +
+            ", limitApp=" + getLimitApp() +
+            ", count=" + count +
+            ", controlType=" + controlType +
+            "}";
+    }
 }

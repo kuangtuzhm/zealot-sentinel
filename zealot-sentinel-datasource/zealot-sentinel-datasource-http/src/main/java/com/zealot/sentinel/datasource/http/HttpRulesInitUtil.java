@@ -7,6 +7,7 @@ import com.alibaba.csp.sentinel.slots.block.RuleConstant;
 import com.alibaba.csp.sentinel.slots.block.authority.AuthorityRule;
 import com.alibaba.csp.sentinel.slots.block.flow.FlowRule;
 import com.alibaba.csp.sentinel.slots.block.flow.FlowRuleManager;
+import com.zealot.sentinel.extension.slots.block.totalday.TotalDayFlowRuleManager;
 import com.zealot.sentinel.datasource.core.bean.SentinelRuleInfo;
 import com.zealot.sentinel.datasource.core.exception.DataSourceException;
 import com.zealot.sentinel.extension.slots.block.authority.JimiAuthorityRuleManager;
@@ -68,8 +69,12 @@ public class HttpRulesInitUtil {
 				}
 			}
 			
-			FlowRuleManager.loadRules(rules);
+			//权限验证
 			JimiAuthorityRuleManager.loadRules(authRules);
+			//每日限量
+			TotalDayFlowRuleManager.loadRules(totalDayRules);
+			//每秒限流
+			FlowRuleManager.loadRules(rules);
 		}
 	}
 }
