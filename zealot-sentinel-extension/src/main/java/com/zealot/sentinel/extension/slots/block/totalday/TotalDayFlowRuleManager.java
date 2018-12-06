@@ -197,7 +197,7 @@ public class TotalDayFlowRuleManager {
 		if (rules != null) {
 			for (TotalDayFlowRule rule : rules) {
 				if (!rule.passCheck(context, node, count)) {
-					throw new FlowException(rule.getLimitApp());
+					throw new TotalDayFlowException(rule.getLimitApp(),rule.getCount());
 				}
 			}
 		}
